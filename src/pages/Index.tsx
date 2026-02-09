@@ -4,6 +4,7 @@ import AboutSection from "@/components/AboutSection";
 import GameSection from "@/components/GameSection";
 import RoadmapSection from "@/components/RoadmapSection";
 import TokenomicsSection from "@/components/TokenomicsSection";
+import MemeGeneratorSection from "@/components/MemeGeneratorSection";
 import CommunitySection from "@/components/CommunitySection";
 import Footer from "@/components/Footer";
 
@@ -16,6 +17,7 @@ const Index = () => {
       <GameSection />
       <RoadmapSection />
       <TokenomicsSection />
+      <MemeGeneratorSection />
       <CommunitySection />
       <Footer />
     </div>
