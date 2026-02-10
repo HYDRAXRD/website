@@ -1,4 +1,4 @@
-import { Wallet, ChevronDown } from "lucide-react";
+import { ShoppingCart, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import hydraLogo from "@/assets/hydraxrd-logo.png";
 import { useMemo } from "react";
@@ -68,8 +68,10 @@ const HeroSection = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 mt-4">
-          <Button size="lg" className="gap-2 text-base font-semibold box-glow px-8">
-            <Wallet size={20} /> Connect Wallet
+          <Button size="lg" className="gap-2 text-base font-semibold box-glow px-8" asChild>
+            <a href="https://ociswap.com/resource_rdx1t4kc2yjdcqprwu70tahua3p8uwvjej9q3rktpxdr8p5pmcp4almd6r" target="_blank" rel="noopener noreferrer">
+              <ShoppingCart size={20} /> Buy Now
+            </a>
           </Button>
           <Button
             variant="outline"
