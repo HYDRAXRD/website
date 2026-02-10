@@ -8,7 +8,6 @@ const navLinks = [
   { label: "Game", href: "#game" },
   { label: "Roadmap", href: "#roadmap" },
   { label: "Tokenomics", href: "#tokenomics" },
-  { label: "Meme Generator", href: "#meme-generator" },
   { label: "Community", href: "#community" },
 ];
 
