@@ -1,4 +1,5 @@
 import { Swords, ImageIcon, BookOpen, Target, Users } from "lucide-react";
+import { motion } from "framer-motion";
 
 const features = [
   { icon: Swords, title: "Turn-Based Battles", description: "Strategic memecoin combat with unique abilities and power-ups" },
@@ -17,19 +18,30 @@ const GameSection = () => {
       </div>
 
       <div className="container relative z-10">
-        <div className="text-center mb-16">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7 }}
+        >
           <h2 className="font-display text-3xl md:text-5xl font-bold text-glow mb-6">
             Battle Within the Radix Narrative
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             An immersive memecoin battle experience where strategy meets meme culture on Radix
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {features.map((f, i) => (
-            <div
+            <motion.div
               key={f.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              whileHover={{ scale: 1.04, y: -5 }}
               className="group rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm p-6 hover:border-primary/50 hover:box-glow transition-all duration-300"
             >
               <div className="inline-flex p-3 rounded-lg bg-primary/10 text-primary mb-4 group-hover:bg-primary/20 transition-colors">
@@ -37,20 +49,31 @@ const GameSection = () => {
               </div>
               <h3 className="font-display text-lg font-bold mb-2">{f.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{f.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Battle arena mockup */}
-        <div className="rounded-2xl border border-border/50 bg-card/30 backdrop-blur-sm p-8 md:p-12 text-center box-glow">
+        <motion.div
+          className="rounded-2xl border border-border/50 bg-card/30 backdrop-blur-sm p-8 md:p-12 text-center box-glow"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7 }}
+        >
           <div className="max-w-lg mx-auto">
-            <Swords size={64} className="mx-auto text-primary/40 mb-6" />
+            <motion.div
+              animate={{ rotate: [0, 5, -5, 0] }}
+              transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+            >
+              <Swords size={64} className="mx-auto text-primary/40 mb-6" />
+            </motion.div>
             <h3 className="font-display text-2xl font-bold mb-3 text-glow">Battle Arena</h3>
             <p className="text-muted-foreground">
-              Epic meme battles coming soon. Prepare your strongest memes for combat in the Radix arena.
+              Epic meme battles coming soon. Prepare your strongest memes for combat in the Radix arena. ⚔️
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion, AnimatePresence } from "framer-motion";
 import hydraLogo from "@/assets/hydraxrd-logo.png";
 
 const navLinks = [
@@ -23,25 +24,36 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
       <div className="container flex h-16 items-center justify-between">
-        <button onClick={() => scrollTo("#hero")} className="flex items-center gap-2">
-          <img src={hydraLogo} alt="HydraXRD" className="h-10 w-10 object-contain" />
-          <span className="font-display text-lg font-bold text-glow">HydraXRD</span>
-        </button>
+        <motion.button
+          onClick={() => scrollTo("#hero")}
+          className="flex items-center gap-2"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <img src={hydraLogo} alt="HYDRA" className="h-10 w-10 object-contain" />
+          <span className="font-display text-lg font-bold text-glow">HYDRA</span>
+        </motion.button>
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-6">
           {navLinks.map((l) => (
-            <button
+            <motion.button
               key={l.href}
               onClick={() => scrollTo(l.href)}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.95 }}
             >
               {l.label}
-            </button>
+            </motion.button>
           ))}
-          <Button size="sm" className="gap-2 box-glow" asChild>
-            <a href="https://ociswap.com/resource_rdx1t4kc2yjdcqprwu70tahua3p8uwvjej9q3rktpxdr8p5pmcp4almd6r" target="_blank" rel="noopener noreferrer">Buy Now</a>
-          </Button>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Button size="sm" className="gap-2 box-glow" asChild>
+              <a href="https://ociswap.com/resource_rdx1t4kc2yjdcqprwu70tahua3p8uwvjej9q3rktpxdr8p5pmcp4almd6r" target="_blank" rel="noopener noreferrer">
+                <ShoppingCart size={16} /> Buy Now
+              </a>
+            </Button>
+          </motion.div>
         </div>
 
         {/* Mobile toggle */}
@@ -51,24 +63,37 @@ const Navbar = () => {
       </div>
 
       {/* Mobile menu */}
-      {open && (
-        <div className="md:hidden border-t border-border/50 bg-background/95 backdrop-blur-xl pb-4">
-          {navLinks.map((l) => (
-            <button
-              key={l.href}
-              onClick={() => scrollTo(l.href)}
-              className="block w-full text-left px-6 py-3 text-sm text-muted-foreground hover:text-primary transition-colors"
-            >
-              {l.label}
-            </button>
-          ))}
-          <div className="px-6 pt-2">
-            <Button size="sm" className="w-full gap-2" asChild>
-              <a href="https://ociswap.com/resource_rdx1t4kc2yjdcqprwu70tahua3p8uwvjej9q3rktpxdr8p5pmcp4almd6r" target="_blank" rel="noopener noreferrer">Buy Now</a>
-            </Button>
-          </div>
-        </div>
-      )}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden border-t border-border/50 bg-background/95 backdrop-blur-xl overflow-hidden"
+          >
+            {navLinks.map((l, i) => (
+              <motion.button
+                key={l.href}
+                onClick={() => scrollTo(l.href)}
+                className="block w-full text-left px-6 py-3 text-sm text-muted-foreground hover:text-primary transition-colors"
+                initial={{ x: -20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ delay: i * 0.05 }}
+              >
+                {l.label}
+              </motion.button>
+            ))}
+            <div className="px-6 py-2">
+              <Button size="sm" className="w-full gap-2" asChild>
+                <a href="https://ociswap.com/resource_rdx1t4kc2yjdcqprwu70tahua3p8uwvjej9q3rktpxdr8p5pmcp4almd6r" target="_blank" rel="noopener noreferrer">
+                  <ShoppingCart size={16} /> Buy Now
+                </a>
+              </Button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

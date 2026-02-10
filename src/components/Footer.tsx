@@ -8,11 +8,11 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <img src={hydraLogo} alt="HydraXRD" className="h-8 w-8 object-contain" />
-              <span className="font-display text-lg font-bold">HydraXRD</span>
+              <img src={hydraLogo} alt="HYDRA" className="h-8 w-8 object-contain" />
+              <span className="font-display text-lg font-bold">HYDRA</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              The first memecoin battle game uniting the Radix community through epic meme warfare.
+              The first memecoin battle game uniting the Radix community through epic meme warfare. WE ARE HYDRA! 🐍
             </p>
           </div>
 
@@ -41,12 +41,12 @@ const Footer = () => {
 
         <div className="border-t border-border/50 pt-6">
           <p className="text-xs text-muted-foreground text-center leading-relaxed max-w-3xl mx-auto">
-            Disclaimer: HydraXRD is a community-driven memecoin project. This is not financial advice.
+            Disclaimer: HYDRA is a community-driven memecoin project. This is not financial advice.
             Cryptocurrency investments carry risk. Always do your own research before investing.
-            HydraXRD is not affiliated with or endorsed by Radix DLT Ltd.
+            HYDRA is not affiliated with or endorsed by Radix DLT Ltd.
           </p>
           <p className="text-xs text-muted-foreground text-center mt-4">
-            © {new Date().getFullYear()} HydraXRD. All rights reserved.
+            © {new Date().getFullYear()} HYDRA. All rights reserved.
           </p>
         </div>
       </div>
