@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, Wallet } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import hydraLogo from "@/assets/hydraxrd-logo.png";
 
@@ -39,8 +39,8 @@ const Navbar = () => {
               {l.label}
             </button>
           ))}
-          <Button size="sm" className="gap-2 box-glow">
-            <Wallet size={16} /> Connect Wallet
+          <Button size="sm" className="gap-2 box-glow" asChild>
+            <a href="https://ociswap.com/resource_rdx1t4kc2yjdcqprwu70tahua3p8uwvjej9q3rktpxdr8p5pmcp4almd6r" target="_blank" rel="noopener noreferrer">Buy Now</a>
           </Button>
         </div>
 
@@ -63,8 +63,8 @@ const Navbar = () => {
             </button>
           ))}
           <div className="px-6 pt-2">
-            <Button size="sm" className="w-full gap-2">
-              <Wallet size={16} /> Connect Wallet
+            <Button size="sm" className="w-full gap-2" asChild>
+              <a href="https://ociswap.com/resource_rdx1t4kc2yjdcqprwu70tahua3p8uwvjej9q3rktpxdr8p5pmcp4almd6r" target="_blank" rel="noopener noreferrer">Buy Now</a>
             </Button>
           </div>
         </div>

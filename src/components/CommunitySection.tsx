@@ -1,16 +1,21 @@
-import { Twitter, MessageCircle, Users } from "lucide-react";
+import { Twitter, MessageCircle, Users, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const socials = [
-  { icon: Twitter, label: "Twitter", href: "#" },
-  { icon: MessageCircle, label: "Telegram", href: "#" },
-  { icon: Users, label: "Discord", href: "#" },
+  { icon: Twitter, label: "Twitter / X", href: "https://x.com/HYDRAXRD" },
+  { icon: MessageCircle, label: "Telegram", href: "https://t.me/hydraxrd" },
+  { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/hydraxrd" },
+  { icon: () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+    </svg>
+  ), label: "TikTok", href: "https://www.tiktok.com/@hydraxrd" },
 ];
 
 const stats = [
-  { value: "10K+", label: "Community Members" },
-  { value: "50K+", label: "Battles Fought" },
-  { value: "100K+", label: "Memes Created" },
+  { value: "1K+", label: "Community Members" },
+  { value: "Coming Soon", label: "Battles Completed" },
+  { value: "100+", label: "Memes Created" },
 ];
 
 const CommunitySection = () => {

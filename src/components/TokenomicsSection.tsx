@@ -10,11 +10,8 @@ const utilities = [
 ];
 
 const distribution = [
-  { name: "Community & Rewards", value: 35, color: "hsl(217, 91%, 60%)" },
-  { name: "Game Development", value: 25, color: "hsl(270, 60%, 55%)" },
-  { name: "Liquidity Pool", value: 20, color: "hsl(142, 70%, 50%)" },
-  { name: "Team & Advisors", value: 10, color: "hsl(25, 95%, 55%)" },
-  { name: "Marketing", value: 10, color: "hsl(200, 80%, 50%)" },
+  { name: "RlyFun Liquidity Pool", value: 80, color: "hsl(217, 91%, 60%)" },
+  { name: "Ociswap Liquidity", value: 20, color: "hsl(142, 70%, 50%)" },
 ];
 
 const TokenomicsSection = () => {
