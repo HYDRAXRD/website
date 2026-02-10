@@ -1,12 +1,13 @@
-import { ShoppingCart, ChevronDown } from "lucide-react";
+import { ShoppingCart, ChevronDown, Flame, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 import hydraLogo from "@/assets/hydraxrd-logo.png";
 import { useMemo } from "react";
 
 const HeroSection = () => {
   const particles = useMemo(
     () =>
-      Array.from({ length: 30 }, (_, i) => ({
+      Array.from({ length: 40 }, (_, i) => ({
         id: i,
         left: `${Math.random() * 100}%`,
         delay: `${Math.random() * 8}s`,
@@ -44,44 +45,82 @@ const HeroSection = () => {
 
       {/* Radial gradients */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/10 rounded-full blur-[120px]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent/5 rounded-full blur-[100px]" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px] animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/10 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: "1s" }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent/5 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: "2s" }} />
       </div>
 
       <div className="container relative z-10 text-center flex flex-col items-center gap-8 py-20">
         {/* Logo */}
-        <div className="animate-pulse-glow">
+        <motion.div
+          className="animate-pulse-glow"
+          initial={{ scale: 0, rotate: -180 }}
+          animate={{ scale: 1, rotate: 0 }}
+          transition={{ type: "spring", duration: 1.2, bounce: 0.4 }}
+        >
           <img
             src={hydraLogo}
-            alt="HydraXRD Logo"
+            alt="HYDRA Logo"
             className="w-40 h-40 md:w-56 md:h-56 object-contain drop-shadow-2xl"
           />
-        </div>
+        </motion.div>
 
-        <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-black text-glow leading-tight max-w-4xl">
-          HydraXRD: Unite the Radix Meme Revolution
-        </h1>
+        {/* WE ARE HYDRA catchphrase */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+          className="flex items-center gap-3"
+        >
+          <Flame className="text-destructive animate-bounce" size={28} />
+          <span className="font-display text-2xl md:text-4xl font-black bg-gradient-to-r from-destructive via-primary to-accent bg-clip-text text-transparent animate-shimmer">
+            WE ARE HYDRA!
+          </span>
+          <Zap className="text-accent animate-bounce" size={28} style={{ animationDelay: "0.3s" }} />
+        </motion.div>
 
-        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
-          The first memecoin battle game bringing together the Radix community through epic meme warfare
-        </p>
+        <motion.h1
+          className="font-display text-4xl md:text-6xl lg:text-7xl font-black text-glow leading-tight max-w-4xl"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+        >
+          HYDRA: Unite the Radix Meme Revolution
+        </motion.h1>
 
-        <div className="flex flex-col sm:flex-row gap-4 mt-4">
-          <Button size="lg" className="gap-2 text-base font-semibold box-glow px-8" asChild>
-            <a href="https://ociswap.com/resource_rdx1t4kc2yjdcqprwu70tahua3p8uwvjej9q3rktpxdr8p5pmcp4almd6r" target="_blank" rel="noopener noreferrer">
-              <ShoppingCart size={20} /> Buy Now
-            </a>
-          </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            className="gap-2 text-base font-semibold border-primary/50 hover:bg-primary/10 px-8"
-            onClick={() => scrollTo("#roadmap")}
-          >
-            View Roadmap <ChevronDown size={20} />
-          </Button>
-        </div>
+        <motion.p
+          className="text-lg md:text-xl text-muted-foreground max-w-2xl"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+        >
+          The first memecoin battle game bringing together the Radix community through epic meme warfare 🚀
+        </motion.p>
+
+        <motion.div
+          className="flex flex-col sm:flex-row gap-4 mt-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7, duration: 0.8 }}
+        >
+          <motion.div whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.95 }}>
+            <Button size="lg" className="gap-2 text-base font-semibold box-glow px-8" asChild>
+              <a href="https://ociswap.com/resource_rdx1t4kc2yjdcqprwu70tahua3p8uwvjej9q3rktpxdr8p5pmcp4almd6r" target="_blank" rel="noopener noreferrer">
+                <ShoppingCart size={20} /> Buy Now 🔥
+              </a>
+            </Button>
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.95 }}>
+            <Button
+              variant="outline"
+              size="lg"
+              className="gap-2 text-base font-semibold border-primary/50 hover:bg-primary/10 px-8"
+              onClick={() => scrollTo("#roadmap")}
+            >
+              View Roadmap <ChevronDown size={20} />
+            </Button>
+          </motion.div>
+        </motion.div>
       </div>
 
       {/* Bottom fade */}

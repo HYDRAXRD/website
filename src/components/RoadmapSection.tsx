@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const phases = [
   {
     phase: "Phase 1",
@@ -75,14 +77,20 @@ const RoadmapSection = () => {
       </div>
 
       <div className="container relative z-10">
-        <div className="text-center mb-16">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7 }}
+        >
           <h2 className="font-display text-3xl md:text-5xl font-bold text-glow mb-6">
             The Path Forward
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Our roadmap to building the ultimate memecoin battle game on Radix
           </p>
-        </div>
+        </motion.div>
 
         {/* Timeline */}
         <div className="relative max-w-3xl mx-auto">
@@ -91,20 +99,32 @@ const RoadmapSection = () => {
 
           <div className="space-y-12">
             {phases.map((p, i) => (
-              <div
+              <motion.div
                 key={p.phase}
+                initial={{ opacity: 0, x: i % 2 === 0 ? 50 : -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
                 className={`relative flex flex-col md:flex-row gap-6 ${
                   i % 2 === 0 ? "md:flex-row-reverse" : ""
                 }`}
               >
                 {/* Dot */}
-                <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full border-2 border-primary bg-background z-10 mt-2" />
+                <motion.div
+                  className="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full border-2 border-primary bg-background z-10 mt-2"
+                  whileInView={{ scale: [0, 1.3, 1] }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                />
 
                 {/* Spacer */}
                 <div className="hidden md:block md:w-1/2" />
 
                 {/* Card */}
-                <div className="ml-12 md:ml-0 md:w-1/2 rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm p-6 hover:box-glow transition-all duration-300">
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  className="ml-12 md:ml-0 md:w-1/2 rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm p-6 hover:box-glow transition-all duration-300"
+                >
                   <div className="flex items-center gap-3 mb-4">
                     <span className={`text-xs font-bold px-3 py-1 rounded-full border ${p.color}`}>
                       {p.phase}
@@ -120,8 +140,8 @@ const RoadmapSection = () => {
                       </li>
                     ))}
                   </ul>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             ))}
           </div>
         </div>
