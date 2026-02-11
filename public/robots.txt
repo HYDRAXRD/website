@@ -2,7 +2,7 @@ User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
-Allow: /
+Allow: /DC7F8B240DBDB8786BEBEA2EF0A0B01C
 
 User-agent: Twitterbot
 Allow: /
