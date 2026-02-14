@@ -47,7 +47,7 @@ const Footer = () => {
               Cryptocurrency investments carry risk. Always do your own research before investing.
               HYDRA is not affiliated with or endorsed by Radix DLT Ltd.
             </p>
-            <p className="text-xs text-muted-foreground mt-4">
+            <p className="text-xs text-muted-foreground mt-4 text-center">
               © {new Date().getFullYear()} HYDRA. All rights reserved.
             </p>
           </div>
