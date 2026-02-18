@@ -19,7 +19,7 @@ const StakeSection = () => {
           <div className="flex items-center justify-center gap-3 mb-4">
             <Lock className="text-accent" size={32} />
             <h2 className="font-display text-3xl md:text-5xl font-black text-glow">
-              Stake HYDRA 🐍
+              Stake HYDRA 🐉
             </h2>
           </div>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
