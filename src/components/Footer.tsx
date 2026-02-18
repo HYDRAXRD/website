@@ -13,7 +13,7 @@ const Footer = () => {
               <span className="font-display text-lg font-bold">HYDRA</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              The first memecoin battle game uniting the Radix community through epic meme warfare. WE ARE HYDRA! 🐍
+              The first memecoin battle game uniting the Radix community through epic meme warfare. WE ARE HYDRA! 🐉
             </p>
           </div>
 

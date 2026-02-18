@@ -34,7 +34,7 @@ const CommunitySection = () => {
           transition={{ duration: 0.7 }}
         >
           <h2 className="font-display text-3xl md:text-5xl font-bold text-glow mb-6">
-            Join the Revolution 🐍
+            Join the Revolution 🐉
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-12">
             Be part of the movement that's reshaping the Radix memecoin landscape. Connect, battle, and grow with us.
