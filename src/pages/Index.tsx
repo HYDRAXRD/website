@@ -8,6 +8,7 @@ import BuySection from "@/components/BuySection";
 import StakeSection from "@/components/StakeSection";
 import CommunitySection from "@/components/CommunitySection";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const Index = () => {
   return (
@@ -22,6 +23,7 @@ const Index = () => {
       <StakeSection />
       <CommunitySection />
       <Footer />
+      <ScrollToTop />
     </div>
   );
 };

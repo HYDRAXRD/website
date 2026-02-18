@@ -22,9 +22,9 @@ const Footer = () => {
             <h4 className="font-display text-sm font-bold mb-4">Radix Ecosystem</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><a href="https://www.radixdlt.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Radix DLT</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Radix Dashboard</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Radix Wallet</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Developer Docs</a></li>
+              <li><a href="https://dashboard.radixdlt.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Radix Dashboard</a></li>
+              <li><a href="https://www.radixdlt.com/wallet" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Radix Wallet</a></li>
+              <li><a href="https://developers.radixdlt.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Developer Docs</a></li>
             </ul>
           </div>
 

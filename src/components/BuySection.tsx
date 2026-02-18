@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ShoppingCart } from "lucide-react";
+
 
 const BuySection = () => {
   return (
@@ -17,7 +17,7 @@ const BuySection = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="flex items-center justify-center gap-3 mb-4">
-            <ShoppingCart className="text-primary" size={32} />
+            <span className="text-4xl">🐉</span>
             <h2 className="font-display text-3xl md:text-5xl font-black text-glow">
               Buy HYDRA 🔥
             </h2>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, ShoppingCart } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import hydraLogo from "@/assets/hydraxrd-logo.png";
@@ -47,10 +47,10 @@ const Navbar = () => {
               {l.label}
             </motion.button>
           ))}
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button size="sm" className="gap-2 box-glow" asChild>
+          <motion.div whileHover={{ scale: 1.1, rotate: [0, -3, 3, 0] }} whileTap={{ scale: 0.95 }}>
+            <Button size="sm" className="gap-2 font-bold bg-gradient-to-r from-primary via-accent to-destructive text-primary-foreground shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-shadow animate-pulse" asChild>
               <a href="https://ociswap.com/resource_rdx1t4kc2yjdcqprwu70tahua3p8uwvjej9q3rktpxdr8p5pmcp4almd6r" target="_blank" rel="noopener noreferrer">
-                <ShoppingCart size={16} /> Buy Now
+                🐉 Buy Now 🔥
               </a>
             </Button>
           </motion.div>
@@ -85,9 +85,9 @@ const Navbar = () => {
               </motion.button>
             ))}
             <div className="px-6 py-2">
-              <Button size="sm" className="w-full gap-2" asChild>
+              <Button size="sm" className="w-full gap-2 font-bold bg-gradient-to-r from-primary via-accent to-destructive text-primary-foreground shadow-lg shadow-primary/30" asChild>
                 <a href="https://ociswap.com/resource_rdx1t4kc2yjdcqprwu70tahua3p8uwvjej9q3rktpxdr8p5pmcp4almd6r" target="_blank" rel="noopener noreferrer">
-                  <ShoppingCart size={16} /> Buy Now
+                  🐉 Buy Now 🔥
                 </a>
               </Button>
             </div>
