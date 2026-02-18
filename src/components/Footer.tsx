@@ -36,6 +36,7 @@ const Footer = () => {
               <li><a href="https://t.me/hydraxrd" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Telegram</a></li>
               <li><a href="https://www.instagram.com/hydraxrd" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Instagram</a></li>
               <li><a href="https://www.tiktok.com/@hydraxrd" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">TikTok</a></li>
+              <li><a href="https://www.youtube.com/@HYDRAXRD" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">YouTube</a></li>
             </ul>
           </div>
         </div>
