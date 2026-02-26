@@ -49,7 +49,7 @@ const Navbar = () => {
           ))}
           <motion.div whileHover={{ scale: 1.1, rotate: [0, -3, 3, 0] }} whileTap={{ scale: 0.95 }}>
             <Button size="sm" className="gap-2 font-bold bg-gradient-to-r from-primary via-accent to-destructive text-primary-foreground shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-shadow animate-pulse" asChild>
-              <a href="https://ociswap.com/resource_rdx1t4kc2yjdcqprwu70tahua3p8uwvjej9q3rktpxdr8p5pmcp4almd6r" target="_blank" rel="noopener noreferrer">
+              <a href="https://hydraxrd.com/swap" target="_blank" rel="noopener noreferrer">
                 🐉 Buy Now 🔥
               </a>
             </Button>
@@ -86,7 +86,7 @@ const Navbar = () => {
             ))}
             <div className="px-6 py-2">
               <Button size="sm" className="w-full gap-2 font-bold bg-gradient-to-r from-primary via-accent to-destructive text-primary-foreground shadow-lg shadow-primary/30" asChild>
-                <a href="https://ociswap.com/resource_rdx1t4kc2yjdcqprwu70tahua3p8uwvjej9q3rktpxdr8p5pmcp4almd6r" target="_blank" rel="noopener noreferrer">
+                <a href="https://hydraxrd.com/swap" target="_blank" rel="noopener noreferrer">
                   🐉 Buy Now 🔥
                 </a>
               </Button>
