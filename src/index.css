@@ -128,3 +128,8 @@
   background: hsl(217 91% 60% / 0.6);
   animation: float linear infinite;
 }
+
+.nav-link[href^="http"], .nav-link[href*="hydraxrd.com"] {
+  pointer-events: auto !important;
+  z-index: 999 !important;
+}
