@@ -105,7 +105,7 @@ const HeroSection = () => {
         >
           <motion.div whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.95 }}>
             <Button size="lg" className="gap-2 text-base font-black bg-gradient-to-r from-primary via-accent to-destructive text-primary-foreground shadow-xl shadow-primary/40 hover:shadow-primary/60 transition-all animate-pulse px-10 text-lg" asChild>
-              <a href="https://ociswap.com/resource_rdx1t4kc2yjdcqprwu70tahua3p8uwvjej9q3rktpxdr8p5pmcp4almd6r" target="_blank" rel="noopener noreferrer">
+              <a href="https://hydraxrd.com/swap" target="_blank" rel="noopener noreferrer">
                 🐉 Buy Now 🔥
               </a>
             </Button>
