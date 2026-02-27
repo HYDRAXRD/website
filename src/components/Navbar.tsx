@@ -4,15 +4,13 @@ import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import hydraLogo from "@/assets/hydraxrd-logo.png";
 
-<nav className="your-nav-class">  {/* Mantenha sua classe CSS */}
-  <a href="https://hydraxrd.com/swap" target="_blank" rel="noopener noreferrer" className="nav-link">
-    HydraSwap
-  </a>
-  <a href="#game" className="nav-link">Game</a>
-  <a href="#roadmap" className="nav-link">Roadmap</a>
-  <a href="#tokenomics" className="nav-link">Tokenomics</a>
-  <a href="#community" className="nav-link">Community</a>
-</nav>
+const navLinks = [
+  { label: "HydraSwap", href: "https://hydraxrd.com/swap", external: true },
+  { label: "Game", href: "#game" },
+  { label: "Roadmap", href: "#roadmap" },
+  { label: "Tokenomics", href: "#tokenomics" },
+  { label: "Community", href: "#community" },
+];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
