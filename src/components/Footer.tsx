@@ -33,7 +33,7 @@ const Footer = () => {
           <div>
             <h4 className="font-display text-sm font-bold mb-4">Follow Us</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="https://x.com/HYDRAXRD" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Twitter / X</a></li>
+              <li><a href="https://x.com/HYDRAXRD" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">X</a></li>
               <li><a href="https://t.me/hydraxrd" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Telegram</a></li>
               <li><a href="https://www.instagram.com/hydraxrd" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Instagram</a></li>
               <li><a href="https://www.tiktok.com/@hydraxrd" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">TikTok</a></li>
