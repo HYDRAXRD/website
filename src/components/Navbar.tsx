@@ -5,12 +5,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import hydraLogo from "@/assets/hydraxrd-logo.png";
 
 const navLinks = [
-  { label: "HydraSwap", href: "https://hydraxrd.com/swap" },
+  { label: "HydraSwap", href: "https://hydraxrd.com/swap", external: true }, 
   { label: "Game", href: "#game" },
   { label: "Roadmap", href: "#roadmap" },
   { label: "Tokenomics", href: "#tokenomics" },
   { label: "Community", href: "#community" },
 ];
+
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
