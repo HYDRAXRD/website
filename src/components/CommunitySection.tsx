@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
 const socials = [
-  { icon: Twitter, label: "Twitter / X", href: "https://x.com/HYDRAXRD" },
+  { icon: Twitter, label: "X", href: "https://x.com/HYDRAXRD" },
   { icon: MessageCircle, label: "Telegram", href: "https://t.me/hydraxrd" },
   { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/hydraxrd" },
   { icon: () => (
@@ -20,7 +20,7 @@ const socials = [
 ];
 
 const stats = [
-  { value: "1K+", label: "Community Members" },
+  { value: "100+", label: "Community Members" },
   { value: "Coming Soon", label: "Battles Completed" },
   { value: "100+", label: "Memes Created" },
 ];
