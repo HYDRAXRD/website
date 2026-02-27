@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import hydraLogo from "@/assets/hydraxrd-logo.png";
 
 const navLinks = [
-  { label: "HydraSwap", href: "https://hydraxrd.com/swap", external: true },
+  { label: "HydraSwap", href: "https://hydraxrd.com/swap" },  // Label + href externo
   { label: "Game", href: "#game" },
   { label: "Roadmap", href: "#roadmap" },
   { label: "Tokenomics", href: "#tokenomics" },
