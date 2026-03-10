@@ -34,13 +34,13 @@ const BuySection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <iframe
-            src="https://astrolescent.com/widget?to=resource_rdx1t4kc2yjdcqprwu70tahua3p8uwvjej9q3rktpxdr8p5pmcp4almd6r&amount=1000"
-            width="467"
-            height="750"
-            frameBorder="0"
-            title="Buy HYDRA"
-            className="max-w-full"
+        <iframe
+          src="https://hydraxrd.com/swap?to=resource_rdx1t4kc2yjdcqprwu70tahua3p8uwvjej9q3rktpxdr8p5pmcp4almd6r&amount=1000"
+          width="467"
+          height="750"
+          frameBorder="0"
+          title="Buy HYDRA"
+          className="max-w-full"
           />
         </motion.div>
       </div>
