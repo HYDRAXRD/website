@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="border-t border-border/50 bg-card/30 py-12">
       <div className="container">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
+        <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
@@ -17,12 +17,19 @@ const Footer = () => {
             </p>
           </div>
 
+          {/* Hydra Ecosystem */}
+          <div>
+            <h4 className="font-display text-sm font-bold mb-4">Hydra Ecosystem</h4>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li><a href="https://hydraxrd.com/swap" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">HydraSwap</a></li>
+              <li><a href="https://hydraxrd.com/bubbles" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">HydraBubbles</a></li>
+            </ul>
+          </div>
+
           {/* Radix Ecosystem */}
           <div>
             <h4 className="font-display text-sm font-bold mb-4">Radix Ecosystem</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="https://hydraxrd.com/swap" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">HydraSwap</a></li>
-              <li><a href="https://hydraxrd.com/bubbles" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">HydraBubbles</a></li>
               <li><a href="https://www.radixdlt.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Radix DLT</a></li>
               <li><a href="https://dashboard.radixdlt.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Radix Dashboard</a></li>
               <li><a href="https://www.radixdlt.com/wallet" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Radix Wallet</a></li>
