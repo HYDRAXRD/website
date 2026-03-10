@@ -37,12 +37,12 @@ const StakeSection = () => {
           <iframe
             title="staking-widget"
             src="https://radix.defiplaza.net/widget/staking/resource_rdx1t4kc2yjdcqprwu70tahua3p8uwvjej9q3rktpxdr8p5pmcp4almd6r?theme=blue"
-            width="100%"
-            height="1000"
+            width="467"
+            height="750"
             scrolling="no"
             frameBorder="0"
             className="w-full h-[1000px] block"
-            style={{ border: 0, margin: "0 auto", minWidth: 375, colorScheme: "normal" }}
+            style={{ border: 0, margin: "0 auto", display: "block", minWidth: 375, colorScheme: "normal" }}
           />
         </motion.div>
       </div>
