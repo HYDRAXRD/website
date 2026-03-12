@@ -23,6 +23,7 @@ const Footer = () => {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><a href="https://hydraxrd.com/swap" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">HydraSwap</a></li>
               <li><a href="https://hydraxrd.com/bubbles" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">HydraBubbles</a></li>
+             <li><a href="https://hydraxrd.com/burn" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">HydraBurn</a></li>
             </ul>
           </div>
 
