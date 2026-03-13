@@ -68,10 +68,25 @@ const GameSection = () => {
             >
               <Swords size={64} className="mx-auto text-primary/40 mb-6" />
             </motion.div>
+
             <h3 className="font-display text-2xl font-bold mb-3 text-glow">Battle Arena</h3>
-            <p className="text-muted-foreground">
-              Epic meme battles coming soon. Prepare your strongest memes for combat in the Radix arena. ⚔️
+
+            <p className="text-muted-foreground mb-8">
+              Epic meme battles in live. Prepare your strongest memes for combat in the Radix arena. ⚔️
             </p>
+
+            {/* Botão Play Now */}
+            <motion.a
+              href="https://hydraxrd.com/battlearena"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.06 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center gap-2 px-8 py-3 rounded-xl bg-primary text-primary-foreground font-display font-bold text-lg shadow-lg hover:bg-primary/90 hover:box-glow transition-all duration-200 cursor-pointer"
+            >
+              <Swords size={20} />
+              Play Now
+            </motion.a>
           </div>
         </motion.div>
       </div>
