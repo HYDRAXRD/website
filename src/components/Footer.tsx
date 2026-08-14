@@ -25,6 +25,7 @@ const Footer = () => {
               <li><a href="https://hydraxrd.com/bubbles" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">HydraBubbles</a></li>
              <li><a href="https://hydraxrd.com/burn" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">HydraBurn</a></li>
             <li><a href="https://hydraxrd.com/battlearena" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">HydraBattlearena</a></li>
+            <li><a href="https://hydraxrd.com/track" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">HydraTrack</a></li>
             </ul>
           </div>
 
