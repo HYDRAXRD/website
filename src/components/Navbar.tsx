@@ -47,6 +47,14 @@ const Navbar = () => {
               {l.label}
             </motion.button>
           ))}
+          <motion.a
+            href="https://hydraxrd.com/blog"
+            className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative"
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Blog
+          </motion.a>
           <motion.div whileHover={{ scale: 1.1, rotate: [0, -3, 3, 0] }} whileTap={{ scale: 0.95 }}>
             <Button size="sm" className="gap-2 font-bold bg-gradient-to-r from-primary via-accent to-destructive text-primary-foreground shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-shadow animate-pulse" asChild>
               <a href="https://hydraxrd.com/swap" target="_blank" rel="noopener noreferrer">
@@ -84,6 +92,16 @@ const Navbar = () => {
                 {l.label}
               </motion.button>
             ))}
+            <motion.a
+              href="https://hydraxrd.com/blog"
+              className="block w-full text-left px-6 py-3 text-sm text-muted-foreground hover:text-primary transition-colors"
+              initial={{ x: -20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: navLinks.length * 0.05 }}
+              onClick={() => setOpen(false)}
+            >
+              Blog
+            </motion.a>
             <div className="px-6 py-2">
               <Button size="sm" className="w-full gap-2 font-bold bg-gradient-to-r from-primary via-accent to-destructive text-primary-foreground shadow-lg shadow-primary/30" asChild>
                 <a href="https://hydraxrd.com/swap" target="_blank" rel="noopener noreferrer">
