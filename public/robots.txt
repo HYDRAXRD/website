@@ -15,3 +15,5 @@ Allow: /1472809a2395c455
 
 User-agent: *
 Allow: /
+
+Sitemap: https://hydraxrd.com/sitemap.xml
