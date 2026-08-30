@@ -9,7 +9,6 @@ const HeroSection = () => {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* Background: CSS puro */}
       <div
         className="absolute inset-0 pointer-events-none"
         aria-hidden="true"
@@ -22,7 +21,6 @@ const HeroSection = () => {
       />
 
       <div className="container relative z-10 text-center flex flex-col items-center gap-8 py-20">
-        {/* Logo — CSS keyframe substitui framer-motion spring */}
         <div
           className="animate-pulse-glow"
           style={{
@@ -35,12 +33,12 @@ const HeroSection = () => {
             alt="HYDRA Logo"
             width={224}
             height={224}
-            className="w-40 h-40 md:w-56 md:h-56 object-contain drop-shadow-2xl"
+            decoding="async"
             fetchPriority="high"
+            className="w-40 h-40 md:w-56 md:h-56 object-contain drop-shadow-2xl"
           />
         </div>
 
-        {/* WE ARE HYDRA */}
         <div
           className="flex items-center gap-3"
           style={{ animation: "heroFadeUp 0.8s 0.5s ease-out forwards", opacity: 0 }}
@@ -90,7 +88,6 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Bottom fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
 
       <style>{`

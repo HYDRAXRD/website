@@ -22,7 +22,6 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
       <div className="container flex h-16 items-center justify-between">
-        {/* Logo — CSS hover, zero framer-motion */}
         <button
           onClick={() => scrollTo("#hero")}
           className="flex items-center gap-2 transition-transform duration-200 hover:scale-105 active:scale-95"
@@ -32,12 +31,13 @@ const Navbar = () => {
             alt="HYDRA"
             width={40}
             height={40}
+            loading="lazy"
+            decoding="async"
             className="h-10 w-10 object-contain"
           />
           <span className="font-display text-lg font-bold text-glow">HYDRA</span>
         </button>
 
-        {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-6">
           {navLinks.map((l) => (
             <button
@@ -65,13 +65,11 @@ const Navbar = () => {
           </Button>
         </div>
 
-        {/* Mobile toggle */}
         <button className="md:hidden text-foreground" onClick={() => setOpen(!open)}>
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile menu — CSS grid animation, zero framer-motion */}
       <div
         className="md:hidden border-t border-border/50 bg-background/95 backdrop-blur-xl overflow-hidden transition-all duration-300 ease-in-out"
         style={{ maxHeight: open ? "400px" : "0px", opacity: open ? 1 : 0 }}

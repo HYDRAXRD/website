@@ -1,76 +1,100 @@
 import hydraLogo from "@/assets/hydraxrd-logo.png";
-import runsOnRadix from "@/assets/runs-on-radix.webp";
+import { ExternalLink } from "lucide-react";
 
-const Footer = () => {
-  return (
-    <footer className="border-t border-border/50 bg-card/30 py-12">
-      <div className="container">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
-          {/* Brand */}
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <img src={hydraLogo} alt="HYDRA" className="h-8 w-8 object-contain" />
-              <span className="font-display text-lg font-bold">HYDRA</span>
-            </div>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              The first memecoin battle game uniting the Radix community through epic meme warfare. WE ARE HYDRA! 🐉
-            </p>
-          </div>
+const socialLinks = [
+  { label: "X / Twitter", href: "https://x.com/hydraxrd", emoji: "🐦" },
+  { label: "Telegram", href: "https://t.me/hydraxrd", emoji: "✈️" },
+  { label: "Discord", href: "https://discord.gg/hydraxrd", emoji: "💬" },
+  { label: "GitHub", href: "https://github.com/HYDRAXRD", emoji: "🐙" },
+];
 
-          {/* Hydra Ecosystem */}
-          <div>
-            <h4 className="font-display text-sm font-bold mb-4">Hydra Ecosystem</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="https://hydraxrd.com/swap" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">HydraSwap</a></li>
-              <li><a href="https://hydraxrd.com/bubbles" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">HydraBubbles</a></li>
-             <li><a href="https://hydraxrd.com/burn" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">HydraBurn</a></li>
-            <li><a href="https://hydraxrd.com/battlearena" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">HydraBattlearena</a></li>
-            <li><a href="https://hydraxrd.com/track" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">HydraTrack</a></li>
-            </ul>
-          </div>
+const resourceLinks = [
+  { label: "Blog", href: "https://hydraxrd.com/blog" },
+  { label: "Swap", href: "https://hydraxrd.com/swap" },
+  { label: "Docs", href: "https://hydraxrd.com/docs" },
+  { label: "Whitepaper", href: "https://hydraxrd.com/whitepaper" },
+];
 
-          {/* Radix Ecosystem */}
-          <div>
-            <h4 className="font-display text-sm font-bold mb-4">Radix Ecosystem</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="https://www.radixdlt.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Radix DLT</a></li>
-              <li><a href="https://dashboard.radixdlt.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Radix Dashboard</a></li>
-              <li><a href="https://www.radixdlt.com/wallet" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Radix Wallet</a></li>
-              <li><a href="https://developers.radixdlt.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Developer Docs</a></li>
-            </ul>
+const Footer = () => (
+  <footer className="border-t border-border/50 bg-background/80 backdrop-blur-xl py-12">
+    <div className="container">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        {/* Brand */}
+        <div className="flex flex-col gap-3">
+          <div className="flex items-center gap-2">
+            <img
+              src={hydraLogo}
+              alt="HYDRA"
+              width={36}
+              height={36}
+              loading="lazy"
+              decoding="async"
+              className="h-9 w-9 object-contain"
+            />
+            <span className="font-display text-lg font-bold text-glow">HYDRA</span>
           </div>
-
-          {/* Social */}
-          <div>
-            <h4 className="font-display text-sm font-bold mb-4">Follow Us</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="https://x.com/HYDRAXRD" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">X</a></li>
-              <li><a href="https://t.me/hydraxrd" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Telegram</a></li>
-              <li><a href="https://www.instagram.com/hydraxrd" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Instagram</a></li>
-              <li><a href="https://www.tiktok.com/@hydraxrd" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">TikTok</a></li>
-              <li><a href="https://www.youtube.com/@HYDRAXRD" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">YouTube</a></li>
-            </ul>
-          </div>
+          <p className="text-sm text-muted-foreground max-w-xs">
+            The first memecoin battle game on Radix. Unite the community. Win the war. 🐉
+          </p>
         </div>
 
-        <div className="border-t border-border/50 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="text-center md:text-left flex-1">
-            <p className="text-xs text-muted-foreground leading-relaxed max-w-3xl">
-              Disclaimer: HYDRA is a community-driven memecoin project. This is not financial advice.
-              Cryptocurrency investments carry risk. Always do your own research before investing.
-              HYDRA is not affiliated with or endorsed by Radix DLT Ltd.
-            </p>
-            <p className="text-xs text-muted-foreground mt-4 text-center">
-              © {new Date().getFullYear()} HYDRA. All rights reserved.
-            </p>
-          </div>
-          <a href="https://www.radixdlt.com" target="_blank" rel="noopener noreferrer" className="shrink-0">
-            <img src={runsOnRadix} alt="Runs on Radix" className="h-12 w-auto opacity-80 hover:opacity-100 transition-opacity" />
-          </a>
+        {/* Resources */}
+        <div>
+          <h4 className="font-semibold text-sm mb-3 text-foreground">Resources</h4>
+          <ul className="flex flex-col gap-2">
+            {resourceLinks.map((l) => (
+              <li key={l.href}>
+                <a
+                  href={l.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-1"
+                >
+                  {l.label} <ExternalLink size={12} />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Social */}
+        <div>
+          <h4 className="font-semibold text-sm mb-3 text-foreground">Community</h4>
+          <ul className="flex flex-col gap-2">
+            {socialLinks.map((l) => (
+              <li key={l.href}>
+                <a
+                  href={l.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  {l.emoji} {l.label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
-    </footer>
-  );
-};
+
+      <div className="border-t border-border/50 pt-6 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <p className="text-xs text-muted-foreground">
+          © 2025 HYDRA. Not financial advice. DYOR. 🐉🔥
+        </p>
+        <p className="text-xs text-muted-foreground">
+          Built on{" "}
+          <a
+            href="https://radixdlt.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-primary transition-colors"
+          >
+            Radix DLT
+          </a>
+        </p>
+      </div>
+    </div>
+  </footer>
+);
 
 export default Footer;
