@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Lock } from "lucide-react";
 
 const StakeSection = () => {
@@ -9,12 +8,12 @@ const StakeSection = () => {
       </div>
 
       <div className="container relative z-10 flex flex-col items-center gap-8">
-        <motion.div
+        <div
           className="text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          style={{
+            animation: "fadeInUp 0.6s ease forwards",
+            opacity: 0,
+          }}
         >
           <div className="flex items-center justify-center gap-3 mb-4">
             <Lock className="text-accent" size={32} />
@@ -25,14 +24,14 @@ const StakeSection = () => {
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
             Stake your HYDRA tokens and earn rewards
           </p>
-        </motion.div>
+        </div>
 
-        <motion.div
+        <div
           className="w-full max-w-[960px] rounded-2xl overflow-hidden border border-border/50 box-glow"
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          style={{
+            animation: "fadeInUp 0.6s ease 0.2s forwards",
+            opacity: 0,
+          }}
         >
           <iframe
             title="staking-widget"
@@ -44,8 +43,15 @@ const StakeSection = () => {
             className="w-full h-[1000px] block"
             style={{ border: 0, margin: "0 auto", display: "block", minWidth: 375, colorScheme: "normal" }}
           />
-        </motion.div>
+        </div>
       </div>
+
+      <style>{`
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(30px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
     </section>
   );
 };
