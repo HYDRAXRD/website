@@ -1,6 +1,5 @@
 import { ChevronDown, Flame, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
 import hydraLogo from "@/assets/hydraxrd-logo.png";
 
 const HeroSection = () => {
@@ -10,7 +9,7 @@ const HeroSection = () => {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* Background: dois radial-gradients em CSS puro — zero elementos DOM extras */}
+      {/* Background: CSS puro */}
       <div
         className="absolute inset-0 pointer-events-none"
         aria-hidden="true"
@@ -23,12 +22,13 @@ const HeroSection = () => {
       />
 
       <div className="container relative z-10 text-center flex flex-col items-center gap-8 py-20">
-        {/* Logo — fetchPriority high para ser o LCP element */}
-        <motion.div
+        {/* Logo — CSS keyframe substitui framer-motion spring */}
+        <div
           className="animate-pulse-glow"
-          initial={{ scale: 0, rotate: -180 }}
-          animate={{ scale: 1, rotate: 0 }}
-          transition={{ type: "spring", duration: 1.2, bounce: 0.4 }}
+          style={{
+            animation: "heroLogoIn 1.2s cubic-bezier(0.34,1.56,0.64,1) forwards, pulse-glow 2s ease-in-out infinite 1.5s",
+            opacity: 0,
+          }}
         >
           <img
             src={hydraLogo}
@@ -38,68 +38,77 @@ const HeroSection = () => {
             className="w-40 h-40 md:w-56 md:h-56 object-contain drop-shadow-2xl"
             fetchPriority="high"
           />
-        </motion.div>
+        </div>
 
-        {/* WE ARE HYDRA catchphrase */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
+        {/* WE ARE HYDRA */}
+        <div
           className="flex items-center gap-3"
+          style={{ animation: "heroFadeUp 0.8s 0.5s ease-out forwards", opacity: 0 }}
         >
           <Flame className="text-destructive animate-bounce" size={28} />
           <span className="font-display text-2xl md:text-4xl font-black bg-gradient-to-r from-destructive via-primary to-accent bg-clip-text text-transparent animate-shimmer">
             WE ARE HYDRA!
           </span>
           <Zap className="text-accent animate-bounce" size={28} style={{ animationDelay: "0.3s" }} />
-        </motion.div>
+        </div>
 
-        <motion.h1
+        <h1
           className="font-display text-4xl md:text-6xl lg:text-7xl font-black text-glow leading-tight max-w-4xl"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
+          style={{ animation: "heroFadeUp 0.8s 0.3s ease-out forwards", opacity: 0 }}
         >
           HYDRA: Unite the Radix Meme Revolution
-        </motion.h1>
+        </h1>
 
-        <motion.p
+        <p
           className="text-lg md:text-xl text-muted-foreground max-w-2xl"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
+          style={{ animation: "heroFadeUp 0.8s 0.5s ease-out forwards", opacity: 0 }}
         >
           The first memecoin battle game bringing together the Radix community through epic meme warfare 🚀
-        </motion.p>
+        </p>
 
-        <motion.div
+        <div
           className="flex flex-col sm:flex-row gap-4 mt-4"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7, duration: 0.8 }}
+          style={{ animation: "heroFadeUp 0.8s 0.7s ease-out forwards", opacity: 0 }}
         >
-          <motion.div whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.95 }}>
-            <Button size="lg" className="gap-2 text-base font-black bg-gradient-to-r from-primary via-accent to-destructive text-primary-foreground shadow-xl shadow-primary/40 hover:shadow-primary/60 transition-all animate-pulse px-10 text-lg" asChild>
-              <a href="https://hydraxrd.com/swap" target="_blank" rel="noopener noreferrer">
-                🐉 Buy Now 🔥
-              </a>
-            </Button>
-          </motion.div>
-          <motion.div whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.95 }}>
-            <Button
-              variant="outline"
-              size="lg"
-              className="gap-2 text-base font-semibold border-primary/50 hover:bg-primary/10 px-8"
-              onClick={() => scrollTo("#roadmap")}
-            >
-              View Roadmap <ChevronDown size={20} />
-            </Button>
-          </motion.div>
-        </motion.div>
+          <Button
+            size="lg"
+            className="gap-2 text-base font-black bg-gradient-to-r from-primary via-accent to-destructive text-primary-foreground shadow-xl shadow-primary/40 hover:shadow-primary/60 hover:scale-[1.08] active:scale-95 transition-transform animate-pulse px-10 text-lg"
+            asChild
+          >
+            <a href="https://hydraxrd.com/swap" target="_blank" rel="noopener noreferrer">
+              🐉 Buy Now 🔥
+            </a>
+          </Button>
+          <Button
+            variant="outline"
+            size="lg"
+            className="gap-2 text-base font-semibold border-primary/50 hover:bg-primary/10 hover:scale-[1.08] active:scale-95 transition-transform px-8"
+            onClick={() => scrollTo("#roadmap")}
+          >
+            View Roadmap <ChevronDown size={20} />
+          </Button>
+        </div>
       </div>
 
       {/* Bottom fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+
+      <style>{`
+        @keyframes heroLogoIn {
+          from { opacity: 0; transform: scale(0) rotate(-180deg); }
+          to   { opacity: 1; transform: scale(1) rotate(0deg); }
+        }
+        @keyframes heroFadeUp {
+          from { opacity: 0; transform: translateY(30px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          [style*="heroLogoIn"], [style*="heroFadeUp"] {
+            animation: none !important;
+            opacity: 1 !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };
