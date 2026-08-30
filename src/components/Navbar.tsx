@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import hydraLogo from "@/assets/hydraxrd-logo.png";
+import hydraLogo from "@/assets/hydraxrd-logo.webp";
 
 const navLinks = [
   { label: "About", href: "#about" },

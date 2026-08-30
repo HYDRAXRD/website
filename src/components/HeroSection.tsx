@@ -1,6 +1,6 @@
 import { ChevronDown, Flame, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import hydraLogo from "@/assets/hydraxrd-logo.png";
+import hydraLogo from "@/assets/hydraxrd-logo.webp";
 
 const HeroSection = () => {
   const scrollTo = (href: string) => {
