@@ -2,56 +2,28 @@ import { ChevronDown, Flame, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import hydraLogo from "@/assets/hydraxrd-logo.png";
-import { useMemo } from "react";
 
 const HeroSection = () => {
-  const particles = useMemo(
-    () =>
-      Array.from({ length: 40 }, (_, i) => ({
-        id: i,
-        left: `${Math.random() * 100}%`,
-        delay: `${Math.random() * 8}s`,
-        duration: `${6 + Math.random() * 8}s`,
-        size: `${2 + Math.random() * 4}px`,
-        opacity: 0.3 + Math.random() * 0.5,
-      })),
-    []
-  );
-
   const scrollTo = (href: string) => {
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* Particle background */}
-      <div className="absolute inset-0 pointer-events-none">
-        {particles.map((p) => (
-          <div
-            key={p.id}
-            className="particle"
-            style={{
-              left: p.left,
-              bottom: "-10px",
-              width: p.size,
-              height: p.size,
-              animationDelay: p.delay,
-              animationDuration: p.duration,
-              opacity: p.opacity,
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Radial gradients */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px] animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/10 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: "1s" }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent/5 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: "2s" }} />
-      </div>
+      {/* Background: dois radial-gradients em CSS puro — zero elementos DOM extras */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        aria-hidden="true"
+        style={{
+          background: `
+            radial-gradient(ellipse 70% 50% at 25% 30%, hsl(var(--primary)/0.10) 0%, transparent 70%),
+            radial-gradient(ellipse 60% 45% at 75% 70%, hsl(var(--secondary)/0.08) 0%, transparent 70%)
+          `,
+        }}
+      />
 
       <div className="container relative z-10 text-center flex flex-col items-center gap-8 py-20">
-        {/* Logo */}
+        {/* Logo — fetchPriority high para ser o LCP element */}
         <motion.div
           className="animate-pulse-glow"
           initial={{ scale: 0, rotate: -180 }}
@@ -61,7 +33,10 @@ const HeroSection = () => {
           <img
             src={hydraLogo}
             alt="HYDRA Logo"
+            width={224}
+            height={224}
             className="w-40 h-40 md:w-56 md:h-56 object-contain drop-shadow-2xl"
+            fetchPriority="high"
           />
         </motion.div>
 
