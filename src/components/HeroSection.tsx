@@ -1,6 +1,5 @@
 import { ChevronDown, Flame, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import hydraLogo from "@/assets/hydraxrd-logo.webp";
 
 const HeroSection = () => {
   const scrollTo = (href: string) => {
@@ -29,7 +28,7 @@ const HeroSection = () => {
           }}
         >
           <img
-            src={hydraLogo}
+            src="/favicon.png"
             alt="HYDRA Logo"
             width={224}
             height={224}
