@@ -1,5 +1,4 @@
 import { Heart, Users, TrendingUp } from "lucide-react";
-import { motion } from "framer-motion";
 
 const values = [
   {
@@ -33,13 +32,7 @@ const AboutSection = () => {
       </div>
 
       <div className="container relative z-10">
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.7 }}
-        >
+        <div className="text-center mb-16 [animation:fadeInUp_0.7s_ease-out_both]">
           <h2 className="font-display text-3xl md:text-5xl font-bold text-glow-purple mb-6">
             Integrating, Not Dividing
           </h2>
@@ -49,28 +42,34 @@ const AboutSection = () => {
             that attracts new users through powerful memes and social media presence. Every strong
             network has strong memes, and we're here to lift Radix out of the mud together.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-3 gap-8">
           {values.map((v, i) => (
-            <motion.div
+            <div
               key={v.title}
-              initial={{ opacity: 0, y: 40, scale: 0.9 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
-              whileHover={{ scale: 1.05, y: -8 }}
-              className={`rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm p-8 text-center transition-shadow duration-300 ${v.glow}`}
+              className={`rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm p-8 text-center hover:scale-105 hover:-translate-y-2 transition-all duration-300 ${v.glow}`}
+              style={{ animation: `fadeInUp 0.5s ${i * 0.15}s ease-out both` }}
             >
               <div className={`inline-flex p-4 rounded-xl bg-muted/50 mb-6 ${v.color}`}>
                 <v.icon size={32} />
               </div>
               <h3 className="font-display text-xl font-bold mb-3">{v.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{v.description}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
+
+      <style>{`
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(40px) scale(0.95); }
+          to   { opacity: 1; transform: translateY(0)   scale(1); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          [style*="fadeInUp"] { animation: none !important; opacity: 1 !important; }
+        }
+      `}</style>
     </section>
   );
 };

@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 const phases = [
   {
     phase: "Phase 1",
@@ -77,20 +75,14 @@ const RoadmapSection = () => {
       </div>
 
       <div className="container relative z-10">
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.7 }}
-        >
+        <div className="text-center mb-16" style={{ animation: "fadeInUp 0.7s ease-out both" }}>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-glow mb-6">
             The Path Forward
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Our roadmap to building the ultimate memecoin battle game on Radix
           </p>
-        </motion.div>
+        </div>
 
         {/* Timeline */}
         <div className="relative max-w-3xl mx-auto">
@@ -99,32 +91,26 @@ const RoadmapSection = () => {
 
           <div className="space-y-12">
             {phases.map((p, i) => (
-              <motion.div
+              <div
                 key={p.phase}
-                initial={{ opacity: 0, x: i % 2 === 0 ? 50 : -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
                 className={`relative flex flex-col md:flex-row gap-6 ${
                   i % 2 === 0 ? "md:flex-row-reverse" : ""
                 }`}
+                style={{
+                  animation: `slideIn${ i % 2 === 0 ? "Right" : "Left" } 0.6s ${i * 0.1}s ease-out both`,
+                }}
               >
                 {/* Dot */}
-                <motion.div
+                <div
                   className="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full border-2 border-primary bg-background z-10 mt-2"
-                  whileInView={{ scale: [0, 1.3, 1] }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  style={{ animation: `dotPop 0.5s ${i * 0.1}s ease-out both` }}
                 />
 
                 {/* Spacer */}
                 <div className="hidden md:block md:w-1/2" />
 
                 {/* Card */}
-                <motion.div
-                  whileHover={{ scale: 1.03 }}
-                  className="ml-12 md:ml-0 md:w-1/2 rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm p-6 hover:box-glow transition-all duration-300"
-                >
+                <div className="ml-12 md:ml-0 md:w-1/2 rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm p-6 hover:box-glow hover:scale-[1.03] transition-all duration-300">
                   <div className="flex items-center gap-3 mb-4">
                     <span className={`text-xs font-bold px-3 py-1 rounded-full border ${p.color}`}>
                       {p.phase}
@@ -140,12 +126,38 @@ const RoadmapSection = () => {
                       </li>
                     ))}
                   </ul>
-                </motion.div>
-              </motion.div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </div>
+
+      <style>{`
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(40px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideInRight {
+          from { opacity: 0; transform: translateX(50px); }
+          to   { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes slideInLeft {
+          from { opacity: 0; transform: translateX(-50px); }
+          to   { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes dotPop {
+          0%   { opacity: 0; transform: translateX(-50%) scale(0); }
+          60%  { transform: translateX(-50%) scale(1.3); }
+          100% { opacity: 1; transform: translateX(-50%) scale(1); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          [style*="fadeInUp"], [style*="slideIn"], [style*="dotPop"] {
+            animation: none !important;
+            opacity: 1 !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };
