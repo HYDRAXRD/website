@@ -1,5 +1,4 @@
 import { Coins, Swords, ArrowUpCircle, Gift, Vote, Lock } from "lucide-react";
-import { motion } from "framer-motion";
 
 const utilities = [
   { icon: Coins,          title: "In-Game Currency",   description: "Buy items, power-ups, and cosmetics" },
@@ -14,7 +13,7 @@ const distribution = [
   { name: "Ociswap Liquidity",     value: 20, color: "hsl(142, 70%, 50%)" },
 ];
 
-// SVG donut puro — substitui recharts (~160KB) com zero dependência
+// SVG donut puro — sem recharts, sem framer-motion
 const DonutChart = () => {
   const cx = 80, cy = 80, r = 52, strokeWidth = 26;
   const circ = 2 * Math.PI * r;
@@ -40,7 +39,6 @@ const DonutChart = () => {
           />
         );
       })}
-      {/* Centro */}
       <text x={cx} y={cy - 6} textAnchor="middle" fill="currentColor" fontSize="11" opacity="0.5">Total</text>
       <text x={cx} y={cy + 10} textAnchor="middle" fill="currentColor" fontSize="18" fontWeight="bold">100%</text>
     </svg>
@@ -50,34 +48,24 @@ const DonutChart = () => {
 const TokenomicsSection = () => (
   <section id="tokenomics" className="py-24 relative">
     <div className="container relative z-10">
-      <motion.div
-        className="text-center mb-16"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.7 }}
-      >
+      <div className="text-center mb-16 animate-fadeInUp">
         <h2 className="font-display text-3xl md:text-5xl font-bold text-glow-green mb-6">
           Tokenomics
         </h2>
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
           The HYDRA token powers every aspect of the ecosystem
         </p>
-      </motion.div>
+      </div>
 
       <div className="grid lg:grid-cols-2 gap-12 items-start">
         {/* Utilities */}
         <div className="space-y-4">
           <h3 className="font-display text-xl font-bold mb-6">Token Utility</h3>
           {utilities.map((u, i) => (
-            <motion.div
+            <div
               key={u.title}
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-30px" }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-              whileHover={{ x: 8 }}
-              className="flex items-start gap-4 rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm p-4 hover:border-primary/50 transition-colors"
+              className="flex items-start gap-4 rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm p-4 hover:border-primary/50 hover:translate-x-2 transition-all duration-300"
+              style={{ animationDelay: `${i * 0.1}s` }}
             >
               <div className="p-2 rounded-lg bg-primary/10 text-primary shrink-0">
                 <u.icon size={20} />
@@ -86,17 +74,12 @@ const TokenomicsSection = () => (
                 <h4 className="font-semibold text-sm mb-1">{u.title}</h4>
                 <p className="text-muted-foreground text-xs">{u.description}</p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
-        {/* Chart — SVG puro */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.7 }}
-        >
+        {/* Chart — SVG puro, CSS scale-in */}
+        <div className="animate-scaleIn">
           <h3 className="font-display text-xl font-bold mb-6">Distribution</h3>
           <div className="rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm p-6">
             <div className="flex justify-center">
@@ -112,17 +95,14 @@ const TokenomicsSection = () => (
             </div>
           </div>
 
-          <motion.div
-            className="mt-4 rounded-xl border border-accent/30 bg-accent/5 p-4 flex items-center gap-3 box-glow-green"
-            whileHover={{ scale: 1.02 }}
-          >
+          <div className="mt-4 rounded-xl border border-accent/30 bg-accent/5 p-4 flex items-center gap-3 box-glow-green hover:scale-[1.02] transition-transform duration-200">
             <Lock size={20} className="text-accent shrink-0" />
             <div>
               <p className="text-sm font-semibold text-accent">Liquidity Locked</p>
               <p className="text-xs text-muted-foreground">LP tokens locked to ensure community trust and stability</p>
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
