@@ -1,4 +1,4 @@
-import hydraLogo from "@/assets/hydraxrd-logo.png";
+import hydraLogo from "@/assets/hydraxrd-logo.webp";
 import { ExternalLink } from "lucide-react";
 
 const socialLinks = [
