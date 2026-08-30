@@ -21,31 +21,29 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    // Increase warning threshold slightly to reduce noise
-    chunkSizeWarningLimit: 600,
+    chunkSizeWarningLimit: 500,
+    minify: "esbuild",
+    cssMinify: true,
     rollupOptions: {
       output: {
-        // Split vendor libs into separate cached chunks
-        manualChunks: {
-          // React core — rarely changes, cached indefinitely
-          "vendor-react": ["react", "react-dom", "react-router-dom"],
-          // Animations — heavy, isolated so pages without it don't load it
-          "vendor-motion": ["framer-motion"],
-          // Charts — only loaded where recharts is used
-          "vendor-charts": ["recharts"],
-          // Radix UI primitives
-          "vendor-radix": [
-            "@radix-ui/react-accordion",
-            "@radix-ui/react-dialog",
-            "@radix-ui/react-dropdown-menu",
-            "@radix-ui/react-tooltip",
-            "@radix-ui/react-tabs",
-            "@radix-ui/react-select",
-            "@radix-ui/react-popover",
-            "@radix-ui/react-toast",
-          ],
-          // Supabase + React Query
-          "vendor-data": ["@supabase/supabase-js", "@tanstack/react-query"],
+        manualChunks(id) {
+          // Animations — heavy, never in the initial chunk
+          if (id.includes("framer-motion")) return "vendor-motion";
+          // Charts
+          if (id.includes("recharts") || id.includes("d3-")) return "vendor-charts";
+          // Data layer
+          if (id.includes("@supabase")) return "vendor-supabase";
+          if (id.includes("@tanstack")) return "vendor-query";
+          // UI primitives — all Radix packages together
+          if (id.includes("@radix-ui")) return "vendor-radix";
+          // React core
+          if (
+            id.includes("react-dom") ||
+            id.includes("react-router") ||
+            id.includes("/react/")
+          ) return "vendor-react";
+          // Everything else in node_modules
+          if (id.includes("node_modules")) return "vendor-misc";
         },
       },
     },
