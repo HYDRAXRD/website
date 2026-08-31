@@ -20,13 +20,9 @@ const HeroSection = () => {
       />
 
       <div className="container relative z-10 text-center flex flex-col items-center gap-8 py-20">
-        <div
-          className="animate-pulse-glow"
-          style={{
-            animation: "heroLogoIn 1.2s cubic-bezier(0.34,1.56,0.64,1) forwards, pulse-glow 2s ease-in-out infinite 1.5s",
-            opacity: 0,
-          }}
-        >
+
+        {/* Logo — animada via classe CSS (keyframes em index.css) */}
+        <div className="hero-logo-anim animate-pulse-glow">
           <img
             src="/favicon.png"
             alt="HYDRA Logo"
@@ -39,10 +35,8 @@ const HeroSection = () => {
           />
         </div>
 
-        <div
-          className="flex items-center gap-3"
-          style={{ animation: "heroFadeUp 0.8s 0.5s ease-out forwards", opacity: 0 }}
-        >
+        {/* Badge */}
+        <div className="hero-fade-up flex items-center gap-3" style={{ animationDelay: "0.5s" }}>
           <Flame className="text-destructive animate-bounce" size={28} />
           <span className="font-display text-2xl md:text-4xl font-black bg-gradient-to-r from-destructive via-primary to-accent bg-clip-text text-transparent animate-shimmer">
             WE ARE HYDRA!
@@ -50,23 +44,26 @@ const HeroSection = () => {
           <Zap className="text-accent animate-bounce" size={28} style={{ animationDelay: "0.3s" }} />
         </div>
 
+        {/* Heading */}
         <h1
-          className="font-display text-4xl md:text-6xl lg:text-7xl font-black text-glow leading-tight max-w-4xl"
-          style={{ animation: "heroFadeUp 0.8s 0.3s ease-out forwards", opacity: 0 }}
+          className="hero-fade-up font-display text-4xl md:text-6xl lg:text-7xl font-black text-glow leading-tight max-w-4xl"
+          style={{ animationDelay: "0.3s" }}
         >
           HYDRA: Unite the Radix Meme Revolution
         </h1>
 
+        {/* Subheading */}
         <p
-          className="text-lg md:text-xl text-muted-foreground max-w-2xl"
-          style={{ animation: "heroFadeUp 0.8s 0.5s ease-out forwards", opacity: 0 }}
+          className="hero-fade-up text-lg md:text-xl text-muted-foreground max-w-2xl"
+          style={{ animationDelay: "0.5s" }}
         >
           The first memecoin battle game bringing together the Radix community through epic meme warfare 🚀
         </p>
 
+        {/* CTAs */}
         <div
-          className="flex flex-col sm:flex-row gap-4 mt-4"
-          style={{ animation: "heroFadeUp 0.8s 0.7s ease-out forwards", opacity: 0 }}
+          className="hero-fade-up flex flex-col sm:flex-row gap-4 mt-4"
+          style={{ animationDelay: "0.7s" }}
         >
           <Button
             size="lg"
@@ -88,24 +85,8 @@ const HeroSection = () => {
         </div>
       </div>
 
+      {/* Bottom fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
-
-      <style>{`
-        @keyframes heroLogoIn {
-          from { opacity: 0; transform: scale(0) rotate(-180deg); }
-          to   { opacity: 1; transform: scale(1) rotate(0deg); }
-        }
-        @keyframes heroFadeUp {
-          from { opacity: 0; transform: translateY(30px); }
-          to   { opacity: 1; transform: translateY(0); }
-        }
-        @media (prefers-reduced-motion: reduce) {
-          [style*="heroLogoIn"], [style*="heroFadeUp"] {
-            animation: none !important;
-            opacity: 1 !important;
-          }
-        }
-      `}</style>
     </section>
   );
 };
