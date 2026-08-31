@@ -1,21 +1,7 @@
 import { ChevronDown, Flame, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useEffect, useState } from "react";
 
 const HeroSection = () => {
-  // Ensure all elements become visible after mount, even if CSS animations fail
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    // Small delay to allow animations to start; if they don't, we force visibility
-    const t = setTimeout(() => setVisible(true), 1600);
-    return () => clearTimeout(t);
-  }, []);
-
-  const forceVisible: React.CSSProperties = visible
-    ? { opacity: 1, transform: "none" }
-    : {};
-
   const scrollTo = (href: string) => {
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
   };
@@ -39,7 +25,6 @@ const HeroSection = () => {
           style={{
             animation: "heroLogoIn 1.2s cubic-bezier(0.34,1.56,0.64,1) forwards, pulse-glow 2s ease-in-out infinite 1.5s",
             opacity: 0,
-            ...forceVisible,
           }}
         >
           <img
@@ -55,7 +40,7 @@ const HeroSection = () => {
 
         <div
           className="flex items-center gap-3"
-          style={{ animation: "heroFadeUp 0.8s 0.5s ease-out forwards", opacity: 0, ...forceVisible }}
+          style={{ animation: "heroFadeUp 0.8s 0.5s ease-out forwards", opacity: 0 }}
         >
           <Flame className="text-destructive animate-bounce" size={28} />
           <span className="font-display text-2xl md:text-4xl font-black bg-gradient-to-r from-destructive via-primary to-accent bg-clip-text text-transparent animate-shimmer">
@@ -66,21 +51,21 @@ const HeroSection = () => {
 
         <h1
           className="font-display text-4xl md:text-6xl lg:text-7xl font-black text-glow leading-tight max-w-4xl"
-          style={{ animation: "heroFadeUp 0.8s 0.3s ease-out forwards", opacity: 0, ...forceVisible }}
+          style={{ animation: "heroFadeUp 0.8s 0.3s ease-out forwards", opacity: 0 }}
         >
           HYDRA: Unite the Radix Meme Revolution
         </h1>
 
         <p
           className="text-lg md:text-xl text-muted-foreground max-w-2xl"
-          style={{ animation: "heroFadeUp 0.8s 0.5s ease-out forwards", opacity: 0, ...forceVisible }}
+          style={{ animation: "heroFadeUp 0.8s 0.5s ease-out forwards", opacity: 0 }}
         >
           The first memecoin battle game bringing together the Radix community through epic meme warfare 🚀
         </p>
 
         <div
           className="flex flex-col sm:flex-row gap-4 mt-4"
-          style={{ animation: "heroFadeUp 0.8s 0.7s ease-out forwards", opacity: 0, ...forceVisible }}
+          style={{ animation: "heroFadeUp 0.8s 0.7s ease-out forwards", opacity: 0 }}
         >
           <Button
             size="lg"
