@@ -3,27 +3,65 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HYDRA — Memecoin Battle Game on Radix</title>
-    <meta name="description" content="HYDRA is the first memecoin battle game uniting the Radix community through epic meme warfare. WE ARE HYDRA!" />
-    <meta name="author" content="HYDRA" />
 
+    <!-- SEO primário -->
+    <title>HYDRA — Memecoin Battle Game on Radix</title>
+    <meta name="description" content="HYDRA is the first memecoin battle game uniting the Radix community through epic meme warfare. Buy, stake and battle with HYDRA on Radix. WE ARE HYDRA!" />
+    <meta name="author" content="HYDRA" />
+    <meta name="keywords" content="HYDRA, memecoin, Radix, XRD, battle game, crypto, meme warfare, HydraXRD, stake, DeFi" />
+    <link rel="canonical" href="https://hydraxrd-radix-meme-warfare.vercel.app/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hydraxrd-radix-meme-warfare.vercel.app/" />
     <meta property="og:title" content="HYDRA — Unite the Radix Meme Revolution" />
     <meta property="og:description" content="The first memecoin battle game bringing together the Radix community through epic meme warfare. WE ARE HYDRA!" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="/favicon.png" />
+    <meta property="og:image" content="https://hydraxrd-radix-meme-warfare.vercel.app/favicon.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="HYDRA" />
 
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@HydraXRD" />
-    <meta name="twitter:image" content="/favicon.png" />
+    <meta name="twitter:creator" content="@HydraXRD" />
+    <meta name="twitter:title" content="HYDRA — Unite the Radix Meme Revolution" />
+    <meta name="twitter:description" content="The first memecoin battle game bringing together the Radix community through epic meme warfare. WE ARE HYDRA!" />
+    <meta name="twitter:image" content="https://hydraxrd-radix-meme-warfare.vercel.app/favicon.png" />
 
-    <!-- Fundo escuro imediato — antes do bundle CSS carregar, evita flash de tela preta -->
-    <style>body { background-color: #0a0a0a; margin: 0; }</style>
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "HYDRA",
+      "url": "https://hydraxrd-radix-meme-warfare.vercel.app/",
+      "description": "The first memecoin battle game bringing together the Radix community through epic meme warfare.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "HYDRA",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://hydraxrd-radix-meme-warfare.vercel.app/favicon.png"
+        }
+      }
+    }
+    </script>
 
+    <!-- Fundo escuro imediato — evita flash branco antes do CSS carregar -->
+    <style>html,body{background:#0a0a0a;margin:0;color-scheme:dark;}</style>
+
+    <!-- Favicon -->
     <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
     <link rel="preload" as="image" href="/favicon.png" />
-    <link rel="dns-prefetch" href="https://api.fontshare.com" />
+
+    <!-- Fontes: preconnect antes do stylesheet -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Orbitron + Inter carregados aqui (não via @import no CSS) -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   </head>
 
   <body>

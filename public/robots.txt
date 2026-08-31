@@ -1,19 +1,4 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /DC7F8B240DBDB8786BEBEA2EF0A0B01C
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: Yandex
-Allow: /1472809a2395c455
-
 User-agent: *
 Allow: /
 
-Sitemap: https://hydraxrd.com/sitemap.xml
+Sitemap: https://hydraxrd-radix-meme-warfare.vercel.app/sitemap.xml
