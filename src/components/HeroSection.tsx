@@ -33,6 +33,7 @@ const HeroSection = () => {
             width={224}
             height={224}
             decoding="async"
+            loading="eager"
             fetchPriority="high"
             className="w-40 h-40 md:w-56 md:h-56 object-contain drop-shadow-2xl"
           />
